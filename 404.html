@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Momentum</title>
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <script>
+            let baseUrl = 'https://jsonic.net/momentum-abstract-site/';
+            let path = location.href.replace(baseUrl,'');
+            let arr = path.split('/');
+            if(arr.length>0) {
+                let lang = arr[0]+'#';
+                let restUrl = arr.slice(1).join('/');
+                location.href = [baseUrl, lang, restUrl].join('');
+            }
+        </script>
+    </head>
+    <body></body>
+</html>
