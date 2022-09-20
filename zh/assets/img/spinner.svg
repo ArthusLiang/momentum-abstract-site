@@ -1,0 +1,23 @@
+<svg width="200px" height="200px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="44" cy="100" r='28' fill='#F2B837'>
+        <animate attributeName="fill" values="#F2B837;#EC7A42;#9E69F9;#5ABEE1" dur="2s" repeatCount="indefinite"></animate>
+        <animate attributeName="r" values="28;13;0;13;28" dur="2s" repeatCount="indefinite"></animate>
+        <animateTransform calcMode='paced' begin="0s;0.4s.end"  attributeName="transform" attributeType="XML" type="rotate" from="0 100 100" to="360 100 100" dur="2s" repeatCount="indefinite" />        
+    </circle>
+    <circle cx="100" cy="44" r='28' fill='#EC7A42'>
+        <animate begin="0.1s;" attributeName="fill" values="#EC7A42;#9E69F9;#5ABEE1;#F2B837" dur="2s" repeatCount="indefinite"></animate>
+        <animate begin="0.1s" attributeName="r" values="28;13;0;13;28" dur="2s" repeatCount="indefinite"></animate>
+        <animateTransform calcMode='paced' begin="0.1s;0.3s.end" attributeName="transform" attributeType="XML" type="rotate" from="0 100 100" to="360 100 100" dur="2s" repeatCount="indefinite" />        
+    </circle>
+    <circle cx="156" cy="100" r='28' fill='#9E69F9'>
+        <animate begin="0.2s" attributeName="fill" values="#9E69F9;#5ABEE1;#F2B837;#EC7A42" dur="2s" repeatCount="indefinite"></animate>
+        <animate begin="0.2s" attributeName="r" values="28;13;0;13;28" dur="2s" repeatCount="indefinite"></animate>
+        <animateTransform calcMode='paced' begin="0.2s;0.2s.end" attributeName="transform" attributeType="XML" type="rotate" from="0 100 100" to="360 100 100" dur="2s" repeatCount="indefinite" />        
+    </circle>
+    <circle cx="100" cy="156" r='28' fill='#5ABEE1'>
+        <animate begin="0.3s" attributeName="fill" values="#5ABEE1;#F2B837;#EC7A42;#9E69F9" dur="2s" repeatCount="indefinite"></animate>
+        <animate begin="0.3s" attributeName="r" values="28;13;0;13;28" dur="2s" repeatCount="indefinite"></animate>
+        <animateTransform calcMode='paced' begin="0.3s;0.1s.end" attributeName="transform" attributeType="XML" type="rotate" from="0 100 100" to="360 100 100" dur="2s" repeatCount="indefinite" />        
+    </circle>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite" />
+</svg>
