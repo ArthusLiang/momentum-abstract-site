@@ -5,9 +5,9 @@
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <script>
-            let regHttp = /^http/;
+            let regHttp = /^http:\/\//;
             if(regHttp.test(location.href)) {
-                location.href = location.href.replace(regHttp, 'https');
+                location.href = location.href.replace(regHttp, 'https:\/\/');
             } else {
                 let baseUrl = 'https://jsonic.net/momentum-abstract-site/';
                 let path = location.href.replace(baseUrl,'');
