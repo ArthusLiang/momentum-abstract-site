@@ -13,9 +13,9 @@
                 let path = location.href.replace(baseUrl,'');
                 let arr = path.split('/');
                 if(arr.length>0) {
-                    let lang = arr[0]+'#';
+                    let lang = arr[0];
                     let restUrl = arr.slice(1).join('/');
-                    location.href = [baseUrl, lang, restUrl].join('');
+                    location.href = baseUrl+lang+'/#/'+restUrl;
                 }                
             }
         </script>

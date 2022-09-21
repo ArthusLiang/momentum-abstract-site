@@ -1,0 +1,447 @@
+<h1 id="momentum-constructor-common">momentum-constructor-common</h1>
+<p>momentum-constructor-common is a tool to offer common modules for momentum-constructor-packages.</p>
+<h2 id="install">Install</h2>
+<p><code>npm i momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">common</span></span></code></p>
+<h2 id="usage">Usage</h2>
+<p>You can go to <code>./test</code> to check the detail usage.</p>
+<h1 id="mfs">mfs</h1>
+<p><code><span class="hljs-attribute">mfs</span></code> is a file system mode in momentum-constructor-common.</p>
+
+<pre><code><span class="hljs-keyword">import</span> { mfs } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
+<p>or</p>
+
+<pre><code><span class="hljs-keyword">const</span> { mfs } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
+<h2 id="path">path</h2>
+<p>Get the full path of where you installed momentum-abstract.</p>
+<h3 id="arguments">arguments</h3>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">momentumType</td>
+<td align="center">MomentumAbstractType</td>
+<td align="left">The data type</td>
+</tr>
+</tbody></table>
+<h3 id="return">return</h3>
+<table>
+<thead>
+<tr>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">string</td>
+<td align="left">the folder path</td>
+</tr>
+</tbody></table>
+<h3 id="usage-1">usage</h3>
+<ul>
+<li>read momentum-abstract/color path</li>
+</ul>
+
+<pre><code>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
+<ul>
+<li>read momentum-abstract/icon path</li>
+</ul>
+
+<pre><code>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.icon)<span class="hljs-comment">;</span></code></pre>
+<h2 id="list">list</h2>
+<p>Get a file name list from momentum-abstract.</p>
+<h3 id="arguments-1">arguments</h3>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">momentumType</td>
+<td align="center">MomentumAbstractType</td>
+<td align="left">The data type</td>
+</tr>
+<tr>
+<td align="left">filter</td>
+<td align="center">IFileFilter</td>
+<td align="left">blacklist and whitelist</td>
+</tr>
+</tbody></table>
+<h3 id="return-1">return</h3>
+<table>
+<thead>
+<tr>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">string[]</td>
+<td align="left">file name list</td>
+</tr>
+</tbody></table>
+<h3 id="usage-2">usage</h3>
+<ul>
+<li>read momentum-abstract/color list</li>
+</ul>
+
+<pre><code>const files <span class="hljs-operator">=</span> mfs.list(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
+<ul>
+<li>read momentum-abstract/color list with filter</li>
+</ul>
+
+<pre><code><span class="hljs-built_in">let</span> files = mfs.list(MomentumAbstractType.color, {
+    whitelist: [/.json$/i]
+});</code></pre>
+<h2 id="read">read</h2>
+<p>Get a list of files from momentum-abstract.</p>
+<h3 id="arguments-2">arguments</h3>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">momentumType</td>
+<td align="center">MomentumAbstractType</td>
+<td align="left">The data type</td>
+</tr>
+<tr>
+<td align="left">filter</td>
+<td align="center">IFileFilter</td>
+<td align="left">blacklist and whitelist</td>
+</tr>
+</tbody></table>
+<h3 id="return-2">return</h3>
+<table>
+<thead>
+<tr>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Record&lt;string, IFile&gt;</td>
+<td align="left">Hash Object for files</td>
+</tr>
+</tbody></table>
+<h3 id="usage-3">usage</h3>
+<ul>
+<li>read momentum-abstract/color json files</li>
+</ul>
+
+<pre><code><span class="hljs-built_in">let</span> files = mfs.<span class="hljs-built_in">read</span>(MomentumAbstractType.<span class="hljs-built_in">color</span>);</code></pre>
+<h1 id="mcommon">mcommon</h1>
+<p><code><span class="hljs-attribute">mcommon</span></code> is a common mode in momentum-constructor-common.</p>
+
+<pre><code><span class="hljs-keyword">import</span> { mcommon } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
+<p>or</p>
+
+<pre><code><span class="hljs-keyword">const</span> { mcommon } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
+<h2 id="getregfromnames">getRegFromNames</h2>
+<p>Create a regular expression using an array of filenames.</p>
+<h3 id="arguments-3">arguments</h3>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">fileNameList</td>
+<td align="center">string[]</td>
+<td align="left">The list of file name</td>
+</tr>
+</tbody></table>
+<h3 id="return-3">return</h3>
+<table>
+<thead>
+<tr>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">RegExp</td>
+<td align="left">RegExp for filter</td>
+</tr>
+</tbody></table>
+<h2 id="getregfromnamessafe">getRegFromNamesSafe</h2>
+<p>getRegFromNamesSafe has the same arguments and return with getRegFromNames. RegExp has a max-length limitation, we do some check in this function.</p>
+<h1 id="mconvert">mconvert</h1>
+<p><code><span class="hljs-attribute">mconvert</span></code> offers the feature to convert momentum files&#39;name and content.</p>
+
+<pre><code><span class="hljs-keyword">import</span> { mconvert } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
+<p>or</p>
+
+<pre><code><span class="hljs-keyword">const</span> { mconvert } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
+<h2 id="renamefile">renameFile</h2>
+<p>rename all the files</p>
+<h3 id="arguments-4">arguments</h3>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">mometnumFiles</td>
+<td align="center">Record&lt;string, IFile&gt;</td>
+<td align="left">the file from mfs.read</td>
+</tr>
+<tr>
+<td align="left">replacement</td>
+<td align="center">IReplacementItem</td>
+<td align="left">replacement</td>
+</tr>
+</tbody></table>
+<h3 id="return-4">return</h3>
+<table>
+<thead>
+<tr>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Record&lt;string, IFile&gt;</td>
+<td align="left">RegExp for filter</td>
+</tr>
+</tbody></table>
+<h2 id="renametoken">renameToken</h2>
+<p>rename the token in the content</p>
+<h3 id="arguments-5">arguments</h3>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">mometnumFiles</td>
+<td align="center">Record&lt;string, IFile&gt;</td>
+<td align="left">the file from mfs.read</td>
+</tr>
+<tr>
+<td align="left">replacement</td>
+<td align="center">IReplacementItem</td>
+<td align="left">replacement</td>
+</tr>
+<tr>
+<td align="left">momentumType</td>
+<td align="center">MomentumAbstractType</td>
+<td align="left">The data type</td>
+</tr>
+</tbody></table>
+<h3 id="return-5">return</h3>
+<table>
+<thead>
+<tr>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Record&lt;string, IFile&gt;</td>
+<td align="left">RegExp for filter</td>
+</tr>
+</tbody></table>
+<h2 id="flat">flat</h2>
+<p>flat the content</p>
+<h3 id="arguments-6">arguments</h3>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">mometnumFiles</td>
+<td align="center">Record&lt;string, IFile&gt;</td>
+<td align="left">the file from mfs.read</td>
+</tr>
+<tr>
+<td align="left">momentumType</td>
+<td align="center">MomentumAbstractType</td>
+<td align="left">The data type</td>
+</tr>
+</tbody></table>
+<h3 id="return-6">return</h3>
+<table>
+<thead>
+<tr>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Record&lt;string, IFile&gt;</td>
+<td align="left">RegExp for filter</td>
+</tr>
+</tbody></table>
+<h1 id="types">Types</h1>
+
+<pre><code><span class="hljs-keyword">import</span> { MomentumAbstractType } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
+<p>or</p>
+
+<pre><code><span class="hljs-keyword">const</span> { <span class="hljs-title class_">MomentumAbstractType</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
+<h2 id="enum">Enum</h2>
+<h3 id="momentumabstracttype---for-reserved-name-not-use">MomentumAbstractType ( * for reserved name, not use)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">color</td>
+<td align="left">color tokens</td>
+</tr>
+<tr>
+<td align="left">font</td>
+<td align="left">font tokens</td>
+</tr>
+<tr>
+<td align="left">illustration</td>
+<td align="left">illustration icons</td>
+</tr>
+<tr>
+<td align="left">icon</td>
+<td align="left">normal icons</td>
+</tr>
+<tr>
+<td align="left">icon-colored</td>
+<td align="left">colored icons</td>
+</tr>
+<tr>
+<td align="left">icon-brand</td>
+<td align="left">brand icons</td>
+</tr>
+<tr>
+<td align="left">sonic</td>
+<td align="left">sound effect</td>
+</tr>
+</tbody></table>
+<h2 id="interface--type">Interface &amp; Type</h2>
+<h3 id="ifile">IFile</h3>
+<table>
+<thead>
+<tr>
+<th align="left">prop</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">path</td>
+<td align="center">string</td>
+<td align="left">the full file path</td>
+</tr>
+<tr>
+<td align="left">content</td>
+<td align="center">any</td>
+<td align="left">file content</td>
+</tr>
+<tr>
+<td align="left">contentCode</td>
+<td align="center">?string</td>
+<td align="left">code type</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="center">string</td>
+<td align="left">file name without extension</td>
+</tr>
+<tr>
+<td align="left">fullName</td>
+<td align="center">string</td>
+<td align="left">file name with extension</td>
+</tr>
+<tr>
+<td align="left">extensionName</td>
+<td align="center">string</td>
+<td align="left">extension such as &#39;.svg&#39;</td>
+</tr>
+</tbody></table>
+<ul>
+<li>rule for reading content</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">file type</th>
+<th align="center">content type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">.svg</td>
+<td align="center">string</td>
+</tr>
+<tr>
+<td align="left">.json</td>
+<td align="center">json ojbect</td>
+</tr>
+<tr>
+<td align="left">default</td>
+<td align="center">buffer[]</td>
+</tr>
+</tbody></table>
+<h3 id="ifilefilter">IFileFilter</h3>
+<table>
+<thead>
+<tr>
+<th align="left">prop</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">whitelist</td>
+<td align="center">RegExp[]</td>
+<td align="left">only return files whose filename matches the condition</td>
+</tr>
+<tr>
+<td align="left">blacklist</td>
+<td align="center">RegExp[]</td>
+<td align="left">only return files whose filename does not match the condition</td>
+</tr>
+</tbody></table>
+<h3 id="ireplacementitem">IReplacementItem</h3>
+<table>
+<thead>
+<tr>
+<th align="left">prop</th>
+<th align="center">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">pattern</td>
+<td align="center">string</td>
+<td align="left">RegExp</td>
+</tr>
+<tr>
+<td align="left">words</td>
+<td align="center">string</td>
+<td align="left">any</td>
+</tr>
+</tbody></table>
