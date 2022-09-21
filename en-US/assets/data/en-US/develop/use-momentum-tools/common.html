@@ -1,17 +1,17 @@
 <h1 id="momentum-constructor-common">momentum-constructor-common</h1>
 <p>momentum-constructor-common is a tool to offer common modules for momentum-constructor-packages.</p>
 <h2 id="install">Install</h2>
-<pre><code>npm i momentum-constructor-common
-</code></pre>
+
+<pre><code>npm i momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">common</span></span></code></pre>
 <h2 id="usage">Usage</h2>
 <p>You can go to <code>./test</code> to check the detail usage.</p>
 <h1 id="mfs">mfs</h1>
 <p><code><span class="hljs-attribute">mfs</span></code> is a file system mode in momentum-constructor-common.</p>
-<pre><code>import { mfs } from &#39;momentum-constructor-common&#39;;
-</code></pre>
+
+<pre><code><span class="hljs-keyword">import</span> { mfs } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
 <p>or</p>
-<pre><code>const { mfs } = require(&#39;momentum-constructor-common&#39;);
-</code></pre>
+
+<pre><code><span class="hljs-keyword">const</span> { mfs } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="path">path</h2>
 <p>Get the full path of where you installed momentum-abstract.</p>
 <h3 id="arguments">arguments</h3>
@@ -46,13 +46,13 @@
 <ul>
 <li>read momentum-abstract/color path</li>
 </ul>
-<pre><code>const pathString = mfs.path(MomentumAbstractType.color);
-</code></pre>
+
+<pre><code>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
 <ul>
 <li>read momentum-abstract/icon path</li>
 </ul>
-<pre><code>const pathString = mfs.path(MomentumAbstractType.icon);
-</code></pre>
+
+<pre><code>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.icon)<span class="hljs-comment">;</span></code></pre>
 <h2 id="list">list</h2>
 <p>Get a file name list from momentum-abstract.</p>
 <h3 id="arguments-1">arguments</h3>
@@ -92,15 +92,15 @@
 <ul>
 <li>read momentum-abstract/color list</li>
 </ul>
-<pre><code>const files = mfs.list(MomentumAbstractType.color);
-</code></pre>
+
+<pre><code>const files <span class="hljs-operator">=</span> mfs.list(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
 <ul>
 <li>read momentum-abstract/color list with filter</li>
 </ul>
-<pre><code>let files = mfs.list(MomentumAbstractType.color, {
+
+<pre><code><span class="hljs-built_in">let</span> files = mfs.list(MomentumAbstractType.color, {
     whitelist: [/.json$/i]
-});
-</code></pre>
+});</code></pre>
 <h2 id="read">read</h2>
 <p>Get a list of files from momentum-abstract.</p>
 <h3 id="arguments-2">arguments</h3>
@@ -140,15 +140,15 @@
 <ul>
 <li>read momentum-abstract/color json files</li>
 </ul>
-<pre><code>let files = mfs.read(MomentumAbstractType.color);
-</code></pre>
+
+<pre><code><span class="hljs-built_in">let</span> files = mfs.<span class="hljs-built_in">read</span>(MomentumAbstractType.<span class="hljs-built_in">color</span>);</code></pre>
 <h1 id="mcommon">mcommon</h1>
 <p><code><span class="hljs-attribute">mcommon</span></code> is a common mode in momentum-constructor-common.</p>
-<pre><code>import { mcommon } from &#39;momentum-constructor-common&#39;;
-</code></pre>
+
+<pre><code><span class="hljs-keyword">import</span> { mcommon } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
 <p>or</p>
-<pre><code>const { mcommon } = require(&#39;momentum-constructor-common&#39;);
-</code></pre>
+
+<pre><code><span class="hljs-keyword">const</span> { mcommon } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="getregfromnames">getRegFromNames</h2>
 <p>Create a regular expression using an array of filenames.</p>
 <h3 id="arguments-3">arguments</h3>
@@ -183,11 +183,11 @@
 <p>getRegFromNamesSafe has the same arguments and return with getRegFromNames. RegExp has a max-length limitation, we do some check in this function.</p>
 <h1 id="mconvert">mconvert</h1>
 <p><code><span class="hljs-attribute">mconvert</span></code> offers the feature to convert momentum files&#39;name and content.</p>
-<pre><code>import { mconvert } from &#39;momentum-constructor-common&#39;;
-</code></pre>
+
+<pre><code><span class="hljs-keyword">import</span> { mconvert } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
 <p>or</p>
-<pre><code>const { mconvert } = require(&#39;momentum-constructor-common&#39;);
-</code></pre>
+
+<pre><code><span class="hljs-keyword">const</span> { mconvert } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="renamefile">renameFile</h2>
 <p>rename all the files</p>
 <h3 id="arguments-4">arguments</h3>
@@ -299,11 +299,11 @@
 </tr>
 </tbody></table>
 <h1 id="types">Types</h1>
-<pre><code>import { MomentumAbstractType } from &#39;momentum-constructor-common&#39;;
-</code></pre>
+
+<pre><code><span class="hljs-keyword">import</span> { MomentumAbstractType } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
 <p>or</p>
-<pre><code>const { MomentumAbstractType } = require(&#39;momentum-constructor-common&#39;);
-</code></pre>
+
+<pre><code><span class="hljs-keyword">const</span> { <span class="hljs-title class_">MomentumAbstractType</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="enum">Enum</h2>
 <h3 id="momentumabstracttype">MomentumAbstractType</h3>
 <table>

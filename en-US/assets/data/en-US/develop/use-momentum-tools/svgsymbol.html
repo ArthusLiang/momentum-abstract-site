@@ -3,71 +3,71 @@
 <h2 id="install">Install</h2>
 <p><code>npm i momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">svgsymbol</span></span></code></p>
 <h2 id="usage">Usage</h2>
-<pre><code class="language-javascript">const svgSymbolBuilder = require(&quot;momentum-constructor-svgsymbol&quot;);
+
+<pre><code>const svgSymbolBuilder <span class="hljs-operator">=</span> require(<span class="hljs-string">&quot;momentum-constructor-svgsymbol&quot;</span>)<span class="hljs-comment">;</span>
 svgSymbolBuilder.doBuild({
 
-})
-</code></pre>
+})</code></pre>
 <p>Require <code>momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">svgsymbol</span></span></code> and calling <code><span class="hljs-attribute">doBuild</span></code> method with parameters, allow to save build result to svg symbol file or JS file, and generete index file, also, the methon will return the svg symbol content as string.</p>
 <h2 id="parameters">Parameters</h2>
-<pre><code class="language-Javascript">{
-   namespace: string, // default is &quot;cisco&quot;
-   taretFolder: string, // default is &quot;[current folder]/dist&quot;
-   targetSvgFile: string, // null or not set will not save svg file
-   targetIndexFile: string, // null or not set will not save index file
-   targetJsFile: string, // it is dependency of index file, default is &quot;default.js&quot;, allow to do not save js file wehen targetIndexFile not set
-   sourceList: object, // define external svg folder
-     {
-         customType1: pathToFile,
-         customType2: pathToFile,
+
+<pre><code><span class="hljs-punctuation">{</span>
+<span class="hljs-symbol">   namespace:</span> string, <span class="hljs-comment">// default is &quot;cisco&quot;</span>
+<span class="hljs-symbol">   taretFolder:</span> string, <span class="hljs-comment">// default is &quot;[current folder]/dist&quot;</span>
+<span class="hljs-symbol">   targetSvgFile:</span> string, <span class="hljs-comment">// null or not set will not save svg file</span>
+<span class="hljs-symbol">   targetIndexFile:</span> string, <span class="hljs-comment">// null or not set will not save index file</span>
+<span class="hljs-symbol">   targetJsFile:</span> string, <span class="hljs-comment">// it is dependency of index file, default is &quot;default.js&quot;, allow to do not save js file wehen targetIndexFile not set</span>
+<span class="hljs-symbol">   sourceList:</span> object, <span class="hljs-comment">// define external svg folder</span>
+     <span class="hljs-punctuation">{</span>
+<span class="hljs-symbol">         customType1:</span> pathToFile,
+<span class="hljs-symbol">         customType2:</span> pathToFile,
          ...
-     },
-   svgList: object, define icon list
-     {
-         type: {icon list} | [icon list] | &quot;all&quot;, // momentum type is &quot;icon&quot;, &quot;icon-brand&quot;, &quot;icon-colored&quot;, &quot;illustration&quot;
-         icon: [&quot;iconName&quot;, &quot;iconName&quot;, ...], // use iconName as icon id
-         &quot;icon-colored&quot;: {&quot;iconName&quot;: &quot;icon id&quot;, &quot;iconName&quot;: &quot;icon id&quot;, ...},  // specified icon id
-         illustration: [], // empty list will build nothing for this type
-         customType1: &quot;all&quot; //&quot;all&quot; means build all svg under the relative path
-         customType2: {&quot;iconName&quot;: &quot;icon id&quot;} // build svg from custom folder
-     }
-}
-</code></pre>
+     <span class="hljs-punctuation">}</span>,
+<span class="hljs-symbol">   svgList:</span> object, define icon list
+     <span class="hljs-punctuation">{</span>
+<span class="hljs-symbol">         type:</span> <span class="hljs-punctuation">{</span>icon list<span class="hljs-punctuation">}</span> | [icon list] | <span class="hljs-string">&quot;all&quot;</span>, <span class="hljs-comment">// momentum type is &quot;icon&quot;, &quot;icon-brand&quot;, &quot;icon-colored&quot;, &quot;illustration&quot;</span>
+<span class="hljs-symbol">         icon:</span> [<span class="hljs-string">&quot;iconName&quot;</span>, <span class="hljs-string">&quot;iconName&quot;</span>, ...], <span class="hljs-comment">// use iconName as icon id</span>
+         <span class="hljs-string">&quot;icon-colored&quot;</span>: <span class="hljs-punctuation">{</span><span class="hljs-string">&quot;iconName&quot;</span>: <span class="hljs-string">&quot;icon id&quot;</span>, <span class="hljs-string">&quot;iconName&quot;</span>: <span class="hljs-string">&quot;icon id&quot;</span>, ...<span class="hljs-punctuation">}</span>,  <span class="hljs-comment">// specified icon id</span>
+<span class="hljs-symbol">         illustration:</span> [], <span class="hljs-comment">// empty list will build nothing for this type</span>
+<span class="hljs-symbol">         customType1:</span> <span class="hljs-string">&quot;all&quot;</span> <span class="hljs-comment">//&quot;all&quot; means build all svg under the relative path</span>
+<span class="hljs-symbol">         customType2:</span> <span class="hljs-punctuation">{</span><span class="hljs-string">&quot;iconName&quot;</span>: <span class="hljs-string">&quot;icon id&quot;</span><span class="hljs-punctuation">}</span> <span class="hljs-comment">// build svg from custom folder</span>
+     <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre>
 <h2 id="example">Example</h2>
 <p>Require the tool, to provide path parameters, require node path module too.</p>
-<pre><code class="language-javascript">
-const svgBuilder = require(&quot;momentum-constructor-svgsymbol&quot;);
-const path = require(&quot;path&quot;);
 
-// Example: Do build with parameters
-svgBuilder.doBuild({
-    namespace: &quot;icons1&quot;,
-    targetFolder: path.resolve(__dirname, &quot;dist&quot;),
-    targetSvgFile: &quot;icons1.svg&quot;,
-    targetJsFile: &quot;icons1.js&quot;,
-    targetIndexFile: &quot;icon1.html&quot;,
-    sourceList: {
-        local: __dirname
+<pre><code>
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">svgBuilder</span> = <span class="hljs-keyword">require</span>(<span class="hljs-string">&quot;momentum-constructor-svgsymbol&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">path</span> = <span class="hljs-keyword">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
+
+<span class="hljs-comment">// Example: Do build with parameters</span>
+svgBuilder.<span class="hljs-title function_ invoke__">doBuild</span>({
+    <span class="hljs-attr">namespace</span>: <span class="hljs-string">&quot;icons1&quot;</span>,
+    <span class="hljs-attr">targetFolder</span>: path.<span class="hljs-title function_ invoke__">resolve</span>(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),
+    <span class="hljs-attr">targetSvgFile</span>: <span class="hljs-string">&quot;icons1.svg&quot;</span>,
+    <span class="hljs-attr">targetJsFile</span>: <span class="hljs-string">&quot;icons1.js&quot;</span>,
+    <span class="hljs-attr">targetIndexFile</span>: <span class="hljs-string">&quot;icon1.html&quot;</span>,
+    <span class="hljs-attr">sourceList</span>: {
+        <span class="hljs-attr">local</span>: __dirname
     },
-    sourceList: {
-        local: __dirname
+    <span class="hljs-attr">sourceList</span>: {
+        <span class="hljs-attr">local</span>: __dirname
     },
-    svgList: {
-        icon: { // Provide a list 
-            alert_bold: &quot;v2_notification_bold_32&quot;,
-            annotate_bold: &quot;v2_annotate_bold_32&quot;,
-            announcement_bold: &quot;v2_feedback_bold_32&quot;,
-            appearance_bold: &quot;v2_appearance_bold_32&quot;,
-            applause_bold: &quot;v2_emoji_applaud_bold_32&quot;,
-            application_regular: &quot;v2_share_application&quot;,
-            applications_bold: &quot;v2_applications_bold_32&quot;,
-            apps_bold: &quot;apps_bold&quot;,
-            apps_filled: &quot;v2_apps_filled_32&quot;
+    <span class="hljs-attr">svgList</span>: {
+        <span class="hljs-attr">icon</span>: { // Provide a <span class="hljs-keyword">list</span> 
+            <span class="hljs-attr">alert_bold</span>: <span class="hljs-string">&quot;v2_notification_bold_32&quot;</span>,
+            <span class="hljs-attr">annotate_bold</span>: <span class="hljs-string">&quot;v2_annotate_bold_32&quot;</span>,
+            <span class="hljs-attr">announcement_bold</span>: <span class="hljs-string">&quot;v2_feedback_bold_32&quot;</span>,
+            <span class="hljs-attr">appearance_bold</span>: <span class="hljs-string">&quot;v2_appearance_bold_32&quot;</span>,
+            <span class="hljs-attr">applause_bold</span>: <span class="hljs-string">&quot;v2_emoji_applaud_bold_32&quot;</span>,
+            <span class="hljs-attr">application_regular</span>: <span class="hljs-string">&quot;v2_share_application&quot;</span>,
+            <span class="hljs-attr">applications_bold</span>: <span class="hljs-string">&quot;v2_applications_bold_32&quot;</span>,
+            <span class="hljs-attr">apps_bold</span>: <span class="hljs-string">&quot;apps_bold&quot;</span>,
+            <span class="hljs-attr">apps_filled</span>: <span class="hljs-string">&quot;v2_apps_filled_32&quot;</span>
         },
-        &quot;icon-colored&quot;: &quot;all&quot;, //special string &quot;all&quot; will build all svg under type into dist.
-        &quot;icon-brand&quot;: [], // empty list will do nothing of this type
-        illustration: {}, // empty object will do nothing of this type
-        local: &quot;all&quot; // will found local svg from sourceList.local
+        <span class="hljs-string">&quot;icon-colored&quot;</span>: <span class="hljs-string">&quot;all&quot;</span>, //special <span class="hljs-keyword">string</span> <span class="hljs-string">&quot;all&quot;</span> will build all svg under type into dist.
+        <span class="hljs-string">&quot;icon-brand&quot;</span>: [], // <span class="hljs-keyword">empty</span> <span class="hljs-keyword">list</span> will <span class="hljs-keyword">do</span> nothing of this type
+        <span class="hljs-attr">illustration</span>: {}, // <span class="hljs-keyword">empty</span> <span class="hljs-keyword">object</span> will <span class="hljs-keyword">do</span> nothing of this type
+        <span class="hljs-attr">local</span>: <span class="hljs-string">&quot;all&quot;</span> // will found local svg <span class="hljs-keyword">from</span> sourceList.local
     }
-});
-</code></pre>
+});</code></pre>
