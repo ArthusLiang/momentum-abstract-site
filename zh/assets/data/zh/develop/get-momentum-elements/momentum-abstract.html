@@ -1,0 +1,23 @@
+<h1 id="momentum-abstract">momentum-abstract</h1>
+<h2 id="开始">开始</h2>
+<p>我们发布了新的软件包momentum-abstract。你可以在这里找到所有的设计token, icon, 声音等元素。过去，这些元素散落在各种包含逻辑的软件包内。</p>
+<h3 id="安装">安装</h3>
+<p><code>npm i momentum-<span class="hljs-keyword">abstract</span></code></p>
+<h3 id="使用">使用</h3>
+<ul>
+<li>读取core color token</li>
+</ul>
+<p><code><span class="hljs-keyword">const</span> core = <span class="hljs-keyword">require</span>(&amp;<span class="hljs-string">#39</span><span class="hljs-punctuation">;</span>momentum-<span class="hljs-keyword">abstract</span>/color/core.json&amp;<span class="hljs-string">#39</span><span class="hljs-punctuation">;</span>)</code>;</p>
+<ul>
+<li>在后面的章节中，我们会更详细的介绍如何使用momentum-abstract</li>
+</ul>
+<h2 id="命名规则">命名规则</h2>
+<p>momentum使用了统一的新命名规则来适应各种可扩展的场景。momentum-constructor的common模块提供了重命名元素的功能，以便一些老系统更快的接入momentum-abstract。</p>
+<ul>
+<li><p>使用&#39;_&#39;连接名字中的不同属性</p>
+</li>
+<li><p>如果某个属性名由多个单词组成，使用&#39;-&#39;连接这些单词</p>
+</li>
+<li><p>所有字母小写</p>
+</li>
+</ul>

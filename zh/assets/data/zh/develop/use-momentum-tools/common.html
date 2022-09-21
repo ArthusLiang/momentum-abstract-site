@@ -1,344 +1,344 @@
 <h1 id="momentum-constructor-common">momentum-constructor-common</h1>
-<p>momentum-constructor-common is a tool to offer common modules for momentum-constructor-packages.</p>
-<h2 id="install">Install</h2>
+<p>momentum-constructor-common是momentum-constructor的一个公用模块</p>
+<h2 id="安装">安装</h2>
 <p><code>npm i momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">common</span></span></code></p>
-<h2 id="usage">Usage</h2>
-<p>You can go to <code>./test</code> to check the detail usage.</p>
+<h2 id="用法">用法</h2>
+<p>你可以去<code>./test</code>查看详细使用情况。</p>
 <h1 id="mfs">mfs</h1>
-<p><code><span class="hljs-attribute">mfs</span></code> is a file system mode in momentum-constructor-common.</p>
+<p><code><span class="hljs-attribute">mfs</span></code> 提供文件系统的方法</p>
 
 <pre><code><span class="hljs-keyword">import</span> { mfs } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
-<p>or</p>
+<p>或者</p>
 
 <pre><code><span class="hljs-keyword">const</span> { mfs } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="path">path</h2>
-<p>Get the full path of where you installed momentum-abstract.</p>
-<h3 id="arguments">arguments</h3>
+<p>获取各种元素的路径</p>
+<h3 id="参数">参数</h3>
 <table>
 <thead>
 <tr>
-<th align="left">name</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">名称</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">momentumType</td>
 <td align="center">MomentumAbstractType</td>
-<td align="left">The data type</td>
+<td align="left">元素类型</td>
 </tr>
 </tbody></table>
-<h3 id="return">return</h3>
+<h3 id="返回值">返回值</h3>
 <table>
 <thead>
 <tr>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">string</td>
-<td align="left">the folder path</td>
+<td align="left">路径目录</td>
 </tr>
 </tbody></table>
-<h3 id="usage-1">usage</h3>
+<h3 id="usage">usage</h3>
 <ul>
-<li>read momentum-abstract/color path</li>
+<li>读取 momentum-abstract/color 路径</li>
 </ul>
 
 <pre><code>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
 <ul>
-<li>read momentum-abstract/icon path</li>
+<li>读取 momentum-abstract/icon 路径</li>
 </ul>
 
 <pre><code>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.icon)<span class="hljs-comment">;</span></code></pre>
 <h2 id="list">list</h2>
-<p>Get a file name list from momentum-abstract.</p>
-<h3 id="arguments-1">arguments</h3>
+<p>获取某个元素的文件列表</p>
+<h3 id="参数-1">参数</h3>
 <table>
 <thead>
 <tr>
-<th align="left">name</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">名称</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">momentumType</td>
 <td align="center">MomentumAbstractType</td>
-<td align="left">The data type</td>
+<td align="left">元素类型</td>
 </tr>
 <tr>
 <td align="left">filter</td>
 <td align="center">IFileFilter</td>
-<td align="left">blacklist and whitelist</td>
+<td align="left">黑名单白名单</td>
 </tr>
 </tbody></table>
-<h3 id="return-1">return</h3>
+<h3 id="返回值-1">返回值</h3>
 <table>
 <thead>
 <tr>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">string[]</td>
-<td align="left">file name list</td>
+<td align="left">文件名列表</td>
 </tr>
 </tbody></table>
-<h3 id="usage-2">usage</h3>
+<h3 id="用法-1">用法</h3>
 <ul>
-<li>read momentum-abstract/color list</li>
+<li>读取 momentum-abstract/color 列表</li>
 </ul>
 
 <pre><code>const files <span class="hljs-operator">=</span> mfs.list(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
 <ul>
-<li>read momentum-abstract/color list with filter</li>
+<li>使用过滤器读取 momentum-abstract/color 列表</li>
 </ul>
 
 <pre><code><span class="hljs-built_in">let</span> files = mfs.list(MomentumAbstractType.color, {
     whitelist: [/.json$/i]
 });</code></pre>
 <h2 id="read">read</h2>
-<p>Get a list of files from momentum-abstract.</p>
-<h3 id="arguments-2">arguments</h3>
+<p>获取momentum-abstract的文件</p>
+<h3 id="参数-2">参数</h3>
 <table>
 <thead>
 <tr>
-<th align="left">name</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">名称</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">momentumType</td>
 <td align="center">MomentumAbstractType</td>
-<td align="left">The data type</td>
+<td align="left">元素类型</td>
 </tr>
 <tr>
 <td align="left">filter</td>
 <td align="center">IFileFilter</td>
-<td align="left">blacklist and whitelist</td>
+<td align="left">黑名单白名单</td>
 </tr>
 </tbody></table>
-<h3 id="return-2">return</h3>
+<h3 id="返回值-2">返回值</h3>
 <table>
 <thead>
 <tr>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">Record&lt;string, IFile&gt;</td>
-<td align="left">Hash Object for files</td>
+<td align="left">包含文件哈希对象</td>
 </tr>
 </tbody></table>
-<h3 id="usage-3">usage</h3>
+<h3 id="用法-2">用法</h3>
 <ul>
-<li>read momentum-abstract/color json files</li>
+<li>读取 momentum-abstract/color 下所有文件</li>
 </ul>
 
 <pre><code><span class="hljs-built_in">let</span> files = mfs.<span class="hljs-built_in">read</span>(MomentumAbstractType.<span class="hljs-built_in">color</span>);</code></pre>
 <h1 id="mcommon">mcommon</h1>
-<p><code><span class="hljs-attribute">mcommon</span></code> is a common mode in momentum-constructor-common.</p>
+<p><code><span class="hljs-attribute">mcommon</span></code> 提供一些公共方法</p>
 
 <pre><code><span class="hljs-keyword">import</span> { mcommon } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
-<p>or</p>
+<p>或</p>
 
 <pre><code><span class="hljs-keyword">const</span> { mcommon } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="getregfromnames">getRegFromNames</h2>
 <p>Create a regular expression using an array of filenames.</p>
-<h3 id="arguments-3">arguments</h3>
+<h3 id="参数-3">参数</h3>
 <table>
 <thead>
 <tr>
-<th align="left">name</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">名称</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">fileNameList</td>
 <td align="center">string[]</td>
-<td align="left">The list of file name</td>
+<td align="left">文件名列表</td>
 </tr>
 </tbody></table>
-<h3 id="return-3">return</h3>
+<h3 id="返回值-3">返回值</h3>
 <table>
 <thead>
 <tr>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">RegExp</td>
-<td align="left">RegExp for filter</td>
+<td align="left">正则表达式</td>
 </tr>
 </tbody></table>
 <h2 id="getregfromnamessafe">getRegFromNamesSafe</h2>
-<p>getRegFromNamesSafe has the same arguments and return with getRegFromNames. RegExp has a max-length limitation, we do some check in this function.</p>
+<p>getRegFromNamesSafe 和 getRegFromNames的参数以及返回类型相同。由于RegExp有长度限制, 在getRegFromNamesSafe我们会做长度检测。</p>
 <h1 id="mconvert">mconvert</h1>
-<p><code><span class="hljs-attribute">mconvert</span></code> offers the feature to convert momentum files&#39;name and content.</p>
+<p><code><span class="hljs-attribute">mconvert</span></code> 用于重命名元素的文件名和token名</p>
 
 <pre><code><span class="hljs-keyword">import</span> { mconvert } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
-<p>or</p>
+<p>或</p>
 
 <pre><code><span class="hljs-keyword">const</span> { mconvert } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="renamefile">renameFile</h2>
-<p>rename all the files</p>
-<h3 id="arguments-4">arguments</h3>
+<p>重命名文件</p>
+<h3 id="参数-4">参数</h3>
 <table>
 <thead>
 <tr>
-<th align="left">name</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">名称</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">mometnumFiles</td>
 <td align="center">Record&lt;string, IFile&gt;</td>
-<td align="left">the file from mfs.read</td>
+<td align="left">mfs.read 回返的内容</td>
 </tr>
 <tr>
 <td align="left">replacement</td>
 <td align="center">IReplacementItem</td>
-<td align="left">replacement</td>
+<td align="left">替换内容</td>
 </tr>
 </tbody></table>
-<h3 id="return-4">return</h3>
+<h3 id="返回值-4">返回值</h3>
 <table>
 <thead>
 <tr>
 <th align="center">type</th>
-<th align="left">description</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">Record&lt;string, IFile&gt;</td>
-<td align="left">RegExp for filter</td>
+<td align="left">新的类似mfs.read 回返的内容</td>
 </tr>
 </tbody></table>
 <h2 id="renametoken">renameToken</h2>
-<p>rename the token in the content</p>
-<h3 id="arguments-5">arguments</h3>
+<p>重命名token</p>
+<h3 id="参数-5">参数</h3>
 <table>
 <thead>
 <tr>
-<th align="left">name</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">名称</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">mometnumFiles</td>
 <td align="center">Record&lt;string, IFile&gt;</td>
-<td align="left">the file from mfs.read</td>
+<td align="left">mfs.read 回返的内容</td>
 </tr>
 <tr>
 <td align="left">replacement</td>
 <td align="center">IReplacementItem</td>
-<td align="left">replacement</td>
+<td align="left">替换内容</td>
 </tr>
 <tr>
 <td align="left">momentumType</td>
 <td align="center">MomentumAbstractType</td>
-<td align="left">The data type</td>
+<td align="left">元素类型</td>
 </tr>
 </tbody></table>
-<h3 id="return-5">return</h3>
+<h3 id="返回值-5">返回值</h3>
 <table>
 <thead>
 <tr>
 <th align="center">type</th>
-<th align="left">description</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">Record&lt;string, IFile&gt;</td>
-<td align="left">RegExp for filter</td>
+<td align="left">新的类似mfs.read 回返的内容</td>
 </tr>
 </tbody></table>
 <h2 id="flat">flat</h2>
-<p>flat the content</p>
-<h3 id="arguments-6">arguments</h3>
+<p>扁平化token的结构</p>
+<h3 id="参数-6">参数</h3>
 <table>
 <thead>
 <tr>
-<th align="left">name</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">名字</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">mometnumFiles</td>
 <td align="center">Record&lt;string, IFile&gt;</td>
-<td align="left">the file from mfs.read</td>
+<td align="left">mfs.read 回返的内容</td>
 </tr>
 <tr>
 <td align="left">momentumType</td>
 <td align="center">MomentumAbstractType</td>
-<td align="left">The data type</td>
+<td align="left">元素类型</td>
 </tr>
 </tbody></table>
-<h3 id="return-6">return</h3>
+<h3 id="返回值-6">返回值</h3>
 <table>
 <thead>
 <tr>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">Record&lt;string, IFile&gt;</td>
-<td align="left">RegExp for filter</td>
+<td align="left">新的类似mfs.read 回返的内容</td>
 </tr>
 </tbody></table>
 <h1 id="types">Types</h1>
 
 <pre><code><span class="hljs-keyword">import</span> { MomentumAbstractType } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
-<p>or</p>
+<p>或</p>
 
 <pre><code><span class="hljs-keyword">const</span> { <span class="hljs-title class_">MomentumAbstractType</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
-<h2 id="enum">Enum</h2>
-<h3 id="momentumabstracttype---for-reserved-name-not-use">MomentumAbstractType ( * for reserved name, not use)</h3>
+<h2 id="枚举">枚举</h2>
+<h3 id="momentumabstracttype">MomentumAbstractType</h3>
 <table>
 <thead>
 <tr>
-<th align="left">name</th>
-<th align="left">description</th>
+<th align="left">名字</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">color</td>
-<td align="left">color tokens</td>
+<td align="left">颜色</td>
 </tr>
 <tr>
 <td align="left">font</td>
-<td align="left">font tokens</td>
+<td align="left">字体</td>
 </tr>
 <tr>
 <td align="left">illustration</td>
-<td align="left">illustration icons</td>
+<td align="left">手绘图</td>
 </tr>
 <tr>
 <td align="left">icon</td>
-<td align="left">normal icons</td>
+<td align="left">普通图标</td>
 </tr>
 <tr>
 <td align="left">icon-colored</td>
-<td align="left">colored icons</td>
+<td align="left">双色图标</td>
 </tr>
 <tr>
 <td align="left">icon-brand</td>
-<td align="left">brand icons</td>
+<td align="left">logo图标</td>
 </tr>
 <tr>
 <td align="left">sonic</td>
-<td align="left">sound effect</td>
+<td align="left">音效</td>
 </tr>
 </tbody></table>
 <h2 id="interface--type">Interface &amp; Type</h2>
@@ -346,40 +346,40 @@
 <table>
 <thead>
 <tr>
-<th align="left">prop</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">属性</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">path</td>
 <td align="center">string</td>
-<td align="left">the full file path</td>
+<td align="left">完整的文件路径</td>
 </tr>
 <tr>
 <td align="left">content</td>
 <td align="center">any</td>
-<td align="left">file content</td>
+<td align="left">文件内容</td>
 </tr>
 <tr>
 <td align="left">contentCode</td>
 <td align="center">?string</td>
-<td align="left">code type</td>
+<td align="left">编码</td>
 </tr>
 <tr>
 <td align="left">name</td>
 <td align="center">string</td>
-<td align="left">file name without extension</td>
+<td align="left">无扩展名的文件名</td>
 </tr>
 <tr>
 <td align="left">fullName</td>
 <td align="center">string</td>
-<td align="left">file name with extension</td>
+<td align="left">有扩展名的文件名</td>
 </tr>
 <tr>
 <td align="left">extensionName</td>
 <td align="center">string</td>
-<td align="left">extension such as &#39;.svg&#39;</td>
+<td align="left">扩展名</td>
 </tr>
 </tbody></table>
 <ul>
@@ -388,8 +388,8 @@
 <table>
 <thead>
 <tr>
-<th align="left">file type</th>
-<th align="center">content type</th>
+<th align="left">文件类型</th>
+<th align="center">数据类型</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -409,29 +409,29 @@
 <table>
 <thead>
 <tr>
-<th align="left">prop</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">属性</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">whitelist</td>
 <td align="center">RegExp[]</td>
-<td align="left">only return files whose filename matches the condition</td>
+<td align="left">白名单</td>
 </tr>
 <tr>
 <td align="left">blacklist</td>
 <td align="center">RegExp[]</td>
-<td align="left">only return files whose filename does not match the condition</td>
+<td align="left">黑名单</td>
 </tr>
 </tbody></table>
 <h3 id="ireplacementitem">IReplacementItem</h3>
 <table>
 <thead>
 <tr>
-<th align="left">prop</th>
-<th align="center">type</th>
-<th align="left">description</th>
+<th align="left">属性</th>
+<th align="center">类型</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>

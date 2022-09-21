@@ -1,0 +1,107 @@
+<h1 id="momentum-constructor-svgsymbol">momentum-constructor-svgsymbol</h1>
+<p>构建为 svgsymbol 并生成图标的索引页面。</p>
+<h2 id="install">Install</h2>
+<p><code>npm i momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">svgsymbol</span></span></code></p>
+<h2 id="usage">Usage</h2>
+
+<pre><code>const svgSymbolBuilder <span class="hljs-operator">=</span> require(<span class="hljs-string">&quot;momentum-constructor-svgsymbol&quot;</span>)<span class="hljs-comment">;</span>
+svgSymbolBuilder.doBuild({
+
+})</code></pre>
+<p>需要 <code>momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">svgsymbol</span></span></code> 并带参数调用 <code><span class="hljs-attribute">doBuild</span></code> 方法，允许将构建结果保存到 svg 符号文件或 JS 文件，以及生成索引文件，并且方法将返回 svg 符号内容作为字符串。</p>
+<h2 id="parameters">Parameters</h2>
+
+<pre><code><span class="hljs-punctuation">{</span>
+<span class="hljs-symbol">   namespace:</span> string, <span class="hljs-comment">// default is &quot;cisco&quot;</span>
+<span class="hljs-symbol">   taretFolder:</span> string, <span class="hljs-comment">// default is &quot;[current folder]/dist&quot;</span>
+<span class="hljs-symbol">   targetSvgFile:</span> string, <span class="hljs-comment">// null or not set will not save svg file</span>
+<span class="hljs-symbol">   targetIndexFile:</span> string, <span class="hljs-comment">// null or not set will not save index file</span>
+<span class="hljs-symbol">   targetJsFile:</span> string, <span class="hljs-comment">// it is dependency of index file, default is &quot;default.js&quot;, allow to do not save js file wehen targetIndexFile not set</span>
+<span class="hljs-symbol">   sourceList:</span> object, <span class="hljs-comment">// define external svg folder</span>
+     <span class="hljs-punctuation">{</span>
+<span class="hljs-symbol">         customType1:</span> pathToFile,
+<span class="hljs-symbol">         customType2:</span> pathToFile,
+         ...
+     <span class="hljs-punctuation">}</span>,
+<span class="hljs-symbol">   svgList:</span> object, define icon list
+     <span class="hljs-punctuation">{</span>
+<span class="hljs-symbol">         type:</span> <span class="hljs-punctuation">{</span>icon list<span class="hljs-punctuation">}</span> | [icon list] | <span class="hljs-string">&quot;all&quot;</span>, <span class="hljs-comment">// momentum type is &quot;icon&quot;, &quot;icon-brand&quot;, &quot;icon-colored&quot;, &quot;illustration&quot;</span>
+<span class="hljs-symbol">         icon:</span> [<span class="hljs-string">&quot;iconName&quot;</span>, <span class="hljs-string">&quot;iconName&quot;</span>, ...], <span class="hljs-comment">// use iconName as icon id</span>
+         <span class="hljs-string">&quot;icon-colored&quot;</span>: <span class="hljs-punctuation">{</span><span class="hljs-string">&quot;iconName&quot;</span>: <span class="hljs-string">&quot;icon id&quot;</span>, <span class="hljs-string">&quot;iconName&quot;</span>: <span class="hljs-string">&quot;icon id&quot;</span>, ...<span class="hljs-punctuation">}</span>,  <span class="hljs-comment">// specified icon id</span>
+<span class="hljs-symbol">         illustration:</span> [], <span class="hljs-comment">// empty list will build nothing for this type</span>
+<span class="hljs-symbol">         customType1:</span> <span class="hljs-string">&quot;all&quot;</span> <span class="hljs-comment">//&quot;all&quot; means build all svg under the relative path</span>
+<span class="hljs-symbol">         customType2:</span> <span class="hljs-punctuation">{</span><span class="hljs-string">&quot;iconName&quot;</span>: <span class="hljs-string">&quot;icon id&quot;</span><span class="hljs-punctuation">}</span> <span class="hljs-comment">// build svg from custom folder</span>
+     <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre>
+<h2 id="例">例</h2>
+<p>需要工具，提供路径参数，也需要节点路径模块。</p>
+
+<pre><code>
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">svgBuilder</span> = <span class="hljs-keyword">require</span>(<span class="hljs-string">&quot;momentum-constructor-svgsymbol&quot;</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">path</span> = <span class="hljs-keyword">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
+
+<span class="hljs-comment">// Example: Do build with parameters</span>
+svgBuilder.<span class="hljs-title function_ invoke__">doBuild</span>({
+    <span class="hljs-attr">namespace</span>: <span class="hljs-string">&quot;icons1&quot;</span>,
+    <span class="hljs-attr">targetFolder</span>: path.<span class="hljs-title function_ invoke__">resolve</span>(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),
+    <span class="hljs-attr">targetSvgFile</span>: <span class="hljs-string">&quot;icons1.svg&quot;</span>,
+    <span class="hljs-attr">targetJsFile</span>: <span class="hljs-string">&quot;icons1.js&quot;</span>,
+    <span class="hljs-attr">targetIndexFile</span>: <span class="hljs-string">&quot;icon1.html&quot;</span>,
+    <span class="hljs-attr">sourceList</span>: {
+        <span class="hljs-attr">local</span>: __dirname
+    },
+    <span class="hljs-attr">sourceList</span>: {
+        <span class="hljs-attr">local</span>: __dirname
+    },
+    <span class="hljs-attr">svgList</span>: {
+        <span class="hljs-attr">icon</span>: { // Provide a <span class="hljs-keyword">list</span> 
+            <span class="hljs-attr">alert_bold</span>: <span class="hljs-string">&quot;v2_notification_bold_32&quot;</span>,
+            <span class="hljs-attr">annotate_bold</span>: <span class="hljs-string">&quot;v2_annotate_bold_32&quot;</span>,
+            <span class="hljs-attr">announcement_bold</span>: <span class="hljs-string">&quot;v2_feedback_bold_32&quot;</span>,
+            <span class="hljs-attr">appearance_bold</span>: <span class="hljs-string">&quot;v2_appearance_bold_32&quot;</span>,
+            <span class="hljs-attr">applause_bold</span>: <span class="hljs-string">&quot;v2_emoji_applaud_bold_32&quot;</span>,
+            <span class="hljs-attr">application_regular</span>: <span class="hljs-string">&quot;v2_share_application&quot;</span>,
+            <span class="hljs-attr">applications_bold</span>: <span class="hljs-string">&quot;v2_applications_bold_32&quot;</span>,
+            <span class="hljs-attr">apps_bold</span>: <span class="hljs-string">&quot;apps_bold&quot;</span>,
+            <span class="hljs-attr">apps_filled</span>: <span class="hljs-string">&quot;v2_apps_filled_32&quot;</span>
+        },
+        <span class="hljs-string">&quot;icon-colored&quot;</span>: <span class="hljs-string">&quot;all&quot;</span>, //special <span class="hljs-keyword">string</span> <span class="hljs-string">&quot;all&quot;</span> will build all svg under type into dist.
+        <span class="hljs-string">&quot;icon-brand&quot;</span>: [], // <span class="hljs-keyword">empty</span> <span class="hljs-keyword">list</span> will <span class="hljs-keyword">do</span> nothing of this type
+        <span class="hljs-attr">illustration</span>: {}, // <span class="hljs-keyword">empty</span> <span class="hljs-keyword">object</span> will <span class="hljs-keyword">do</span> nothing of this type
+        <span class="hljs-attr">local</span>: <span class="hljs-string">&quot;all&quot;</span> // will found local svg <span class="hljs-keyword">from</span> sourceList.local
+    }
+});</code></pre>
+<p>const svgBuilder = require(&quot;momentum-constructor-svgsymbol&quot;);
+常量路径 = 要求（“路径”）；</p>
+<p>// 示例：使用参数构建
+svgBuilder.doBuild({
+    命名空间：“icons1”，
+    targetFolder: path.resolve(__dirname, &quot;dist&quot;),
+    targetSvgFile: &quot;icons1.svg&quot;,
+    targetJsFile: &quot;icons1.js&quot;,
+    targetIndexFile: &quot;icon1.html&quot;,
+    源列表：{
+        本地：__dirname
+    },
+    源列表：{
+        本地：__dirname
+    },
+    SVG列表：{
+        icon: { // 提供一个列表
+            alert_bold: &quot;v2_notification_bold_32&quot;,
+            annotate_bold：“v2_annotate_bold_32”，
+            公告粗体：“v2_feedback_bold_32”，
+            外观_bold：“v2_appearance_bold_32”，
+            applause_bold: &quot;v2_emoji_applaud_bold_32&quot;,
+            application_regular: &quot;v2_share_application&quot;,
+            applications_bold: &quot;v2_applications_bold_32&quot;,
+            apps_bold: &quot;apps_bold&quot;,
+            应用程序填充：“v2_apps_filled_32”
+        },
+        &quot;icon-colored&quot;: &quot;all&quot;, //特殊字符串 &quot;all&quot; 会将 type 下的所有 svg 构建到 dist.
+        &quot;icon-brand&quot;: [], // 空列表不会做这种类型的任何事情
+        插图：{}，// 空对象不会执行此类型的任何操作
+        local: &quot;all&quot; // 将从 sourceList.local 中找到本地 svg
+    }
+});
+```</p>
