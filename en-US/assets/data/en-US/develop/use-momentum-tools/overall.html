@@ -2,7 +2,7 @@
 <p>We published momentum-abstract to offer the data from Momentum Design. In order to use momentum-abstract to build your own application, you need build Momentum Desgin data to the files you can use.</p>
 <p>momentum-constructor contains building tools for momentum-abstract.</p>
 <h2 id="tools">Tools</h2>
-<p>All the momentum-constructor package is under <code>./tools</code>. </p>
+<p>All the momentum-constructor package is under <code class='hljs'>./tools</code>. </p>
 <ul>
 <li><p>All tools need to be available in sustainable integration tools</p>
 </li>
@@ -17,13 +17,13 @@
 <ol>
 <li><p>Folk momentum-constructor, edit the repo in your own repo and then send pull request. Please rebase commits before sending PR.</p>
 </li>
-<li><p>We assume your new package name is <code>momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">new</span></span></code>, create folder named <code><span class="hljs-keyword">new</span></code> under <code>./tools</code>.</p>
+<li><p>We assume your new package name is <code class='hljs'>momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">new</span></span></code>, create folder named <code class='hljs'><span class="hljs-keyword">new</span></code> under <code class='hljs'>./tools</code>.</p>
 </li>
-<li><p>Add publishConfig in your <code><span class="hljs-keyword">package</span>.json</code>.</p>
+<li><p>Add publishConfig in your <code class='hljs'><span class="hljs-keyword">package</span>.json</code>.</p>
 </li>
 </ol>
 
-<pre><code>    <span class="hljs-attr">&quot;publishConfig&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+<pre class='hljs'><code class='hljs'>    <span class="hljs-attr">&quot;publishConfig&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
         <span class="hljs-attr">&quot;access&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;public&quot;</span>
     <span class="hljs-punctuation">}</span></code></pre>
 <ol start="4">
@@ -34,15 +34,15 @@
 </ol>
 <h2 id="version-control">Version control</h2>
 <ol>
-<li><p>If we find any updates under your package folder, we will try to get the next version of your package from NPM server and update the version in <code><span class="hljs-keyword">package</span>.json</code>.</p>
+<li><p>If we find any updates under your package folder, we will try to get the next version of your package from NPM server and update the version in <code class='hljs'><span class="hljs-keyword">package</span>.json</code>.</p>
 </li>
-<li><p>If you do not want to use update the version number, you can add <code><span class="hljs-string">[skip ci]</span></code>  as a part of the commit title. Be careful to use this feature, it will skip all the CI.</p>
+<li><p>If you do not want to use update the version number, you can add <code class='hljs'><span class="hljs-string">[skip ci]</span></code>  as a part of the commit title. Be careful to use this feature, it will skip all the CI.</p>
 </li>
-<li><p>We run a job twice a day to check our packages under <code>./tools</code>. If the version number is greater than npm server&#39;s version, we will run npm publish.</p>
+<li><p>We run a job twice a day to check our packages under <code class='hljs'>./tools</code>. If the version number is greater than npm server&#39;s version, we will run npm publish.</p>
 </li>
 </ol>
 <h2 id="commit">commit</h2>
-<p>The title should be like <code><span class="hljs-function"><span class="hljs-title">feat</span><span class="hljs-params">(add)</span></span>: detail update</code></p>
+<p>The title should be like <code class='hljs'><span class="hljs-function"><span class="hljs-title">feat</span><span class="hljs-params">(add)</span></span>: detail update</code></p>
 <h3 id="commit-types">commit types</h3>
 <ul>
 <li>feat</li>

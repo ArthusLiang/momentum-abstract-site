@@ -1,17 +1,17 @@
 <h1 id="momentum-constructor-svgsymbol">momentum-constructor-svgsymbol</h1>
 <p>Build to svgsymbol and generate index page of icons.</p>
 <h2 id="install">Install</h2>
-<p><code>npm i momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">svgsymbol</span></span></code></p>
+<p><code class='hljs'>npm i momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">svgsymbol</span></span></code></p>
 <h2 id="usage">Usage</h2>
 
-<pre><code>const svgSymbolBuilder <span class="hljs-operator">=</span> require(<span class="hljs-string">&quot;momentum-constructor-svgsymbol&quot;</span>)<span class="hljs-comment">;</span>
+<pre class='hljs'><code class='hljs'>const svgSymbolBuilder <span class="hljs-operator">=</span> require(<span class="hljs-string">&quot;momentum-constructor-svgsymbol&quot;</span>)<span class="hljs-comment">;</span>
 svgSymbolBuilder.doBuild({
 
 })</code></pre>
-<p>Require <code>momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">svgsymbol</span></span></code> and calling <code><span class="hljs-attribute">doBuild</span></code> method with parameters, allow to save build result to svg symbol file or JS file, and generete index file, also, the methon will return the svg symbol content as string.</p>
+<p>Require <code class='hljs'>momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">svgsymbol</span></span></code> and calling <code class='hljs'><span class="hljs-attribute">doBuild</span></code> method with parameters, allow to save build result to svg symbol file or JS file, and generete index file, also, the methon will return the svg symbol content as string.</p>
 <h2 id="parameters">Parameters</h2>
 
-<pre><code><span class="hljs-punctuation">{</span>
+<pre class='hljs'><code class='hljs'><span class="hljs-punctuation">{</span>
 <span class="hljs-symbol">   namespace:</span> string, <span class="hljs-comment">// default is &quot;cisco&quot;</span>
 <span class="hljs-symbol">   taretFolder:</span> string, <span class="hljs-comment">// default is &quot;[current folder]/dist&quot;</span>
 <span class="hljs-symbol">   targetSvgFile:</span> string, <span class="hljs-comment">// null or not set will not save svg file</span>
@@ -36,7 +36,7 @@ svgSymbolBuilder.doBuild({
 <h2 id="example">Example</h2>
 <p>Require the tool, to provide path parameters, require node path module too.</p>
 
-<pre><code>
+<pre class='hljs'><code class='hljs'>
 <span class="hljs-keyword">const</span> <span class="hljs-variable constant_">svgBuilder</span> = <span class="hljs-keyword">require</span>(<span class="hljs-string">&quot;momentum-constructor-svgsymbol&quot;</span>);
 <span class="hljs-keyword">const</span> <span class="hljs-variable constant_">path</span> = <span class="hljs-keyword">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
 

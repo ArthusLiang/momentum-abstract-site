@@ -2,7 +2,7 @@
 <p>我们发布了 momentum-abstract 以提供来自 Momentum Design 的数据。 为了使用动量抽象来构建您自己的应用程序，您需要将 Momentum Desgin 数据构建到您可以使用的文件中。
 momentum-constructor contains building tools for momentum-abstract.</p>
 <h2 id="工具">工具</h2>
-<p>所有的momentum-constructor的包都在 <code>./tools</code> 下。</p>
+<p>所有的momentum-constructor的包都在 <code class='hljs'>./tools</code> 下。</p>
 <ul>
 <li><p>所有工具都需要在可持续集成工具中可用</p>
 </li>
@@ -20,16 +20,16 @@ momentum-constructor contains building tools for momentum-abstract.</p>
 </ol>
 </li>
 <li><ol start="2">
-<li>我们假设你的新包名是 <code>momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">new</span></span></code>，在 <code>./tools</code> 下创建名为 <code><span class="hljs-keyword">new</span></code> 的文件夹。</li>
+<li>我们假设你的新包名是 <code class='hljs'>momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">new</span></span></code>，在 <code class='hljs'>./tools</code> 下创建名为 <code class='hljs'><span class="hljs-keyword">new</span></code> 的文件夹。</li>
 </ol>
 </li>
 <li><ol start="3">
-<li>编辑 publishConfig 在你的 <code><span class="hljs-keyword">package</span>.json</code>.</li>
+<li>编辑 publishConfig 在你的 <code class='hljs'><span class="hljs-keyword">package</span>.json</code>.</li>
 </ol>
 </li>
 </ul>
 
-<pre><code>    <span class="hljs-attr">&quot;publishConfig&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+<pre class='hljs'><code class='hljs'>    <span class="hljs-attr">&quot;publishConfig&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
         <span class="hljs-attr">&quot;access&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;public&quot;</span>
     <span class="hljs-punctuation">}</span></code></pre>
 <ul>
@@ -45,20 +45,20 @@ momentum-constructor contains building tools for momentum-abstract.</p>
 <h2 id="版本控制">版本控制</h2>
 <ul>
 <li><ol>
-<li>如果我们在您的包文件夹下发现任何更新，我们将尝试从 NPM 服务器获取您的包的下一个版本并更新 <code><span class="hljs-keyword">package</span>.json</code> 中的版本。</li>
+<li>如果我们在您的包文件夹下发现任何更新，我们将尝试从 NPM 服务器获取您的包的下一个版本并更新 <code class='hljs'><span class="hljs-keyword">package</span>.json</code> 中的版本。</li>
 </ol>
 </li>
 <li><ol start="2">
-<li>如果不想使用更新版本号，可以在提交标题中添加<code><span class="hljs-string">[skip ci]</span></code>。 小心使用这个特性，它会跳过所有的 CI。</li>
+<li>如果不想使用更新版本号，可以在提交标题中添加<code class='hljs'><span class="hljs-string">[skip ci]</span></code>。 小心使用这个特性，它会跳过所有的 CI。</li>
 </ol>
 </li>
 <li><ol start="3">
-<li>我们每天运行两次作业来检查 <code>./tools</code> 下的包。 如果版本号大于 npm 服务器的版本，我们将运行 npm publish。</li>
+<li>我们每天运行两次作业来检查 <code class='hljs'>./tools</code> 下的包。 如果版本号大于 npm 服务器的版本，我们将运行 npm publish。</li>
 </ol>
 </li>
 </ul>
 <h2 id="commit">commit</h2>
-<p>标题格式 <code><span class="hljs-function"><span class="hljs-title">feat</span><span class="hljs-params">(add)</span></span>: detail update</code></p>
+<p>标题格式 <code class='hljs'><span class="hljs-function"><span class="hljs-title">feat</span><span class="hljs-params">(add)</span></span>: detail update</code></p>
 <h3 id="commit-类型">commit 类型</h3>
 <ul>
 <li>feat</li>

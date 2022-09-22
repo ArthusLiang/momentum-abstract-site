@@ -2,16 +2,16 @@
 <p>momentum-constructor-common是momentum-constructor的一个公用模块</p>
 <h2 id="安装">安装</h2>
 
-<pre><code>npm i momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">common</span></span></code></pre>
+<pre class='hljs'><code class='hljs'>npm i momentum-<span class="hljs-function"><span class="hljs-keyword">constructor</span>-<span class="hljs-title">common</span></span></code></pre>
 <h2 id="用法">用法</h2>
-<p>你可以去<code>./test</code>查看详细使用情况。</p>
+<p>你可以去<code class='hljs'>./test</code>查看详细使用情况。</p>
 <h1 id="mfs">mfs</h1>
-<p><code><span class="hljs-attribute">mfs</span></code> 提供文件系统的方法</p>
+<p><code class='hljs'><span class="hljs-attribute">mfs</span></code> 提供文件系统的方法</p>
 
-<pre><code><span class="hljs-keyword">import</span> { mfs } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
+<pre class='hljs'><code class='hljs'><span class="hljs-keyword">import</span> { mfs } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
 <p>或者</p>
 
-<pre><code><span class="hljs-keyword">const</span> { mfs } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
+<pre class='hljs'><code class='hljs'><span class="hljs-keyword">const</span> { mfs } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="path">path</h2>
 <p>获取各种元素的路径</p>
 <h3 id="参数">参数</h3>
@@ -47,12 +47,12 @@
 <li>读取 momentum-abstract/color 路径</li>
 </ul>
 
-<pre><code>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
+<pre class='hljs'><code class='hljs'>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
 <ul>
 <li>读取 momentum-abstract/icon 路径</li>
 </ul>
 
-<pre><code>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.icon)<span class="hljs-comment">;</span></code></pre>
+<pre class='hljs'><code class='hljs'>const pathString <span class="hljs-operator">=</span> mfs.path(MomentumAbstractType.icon)<span class="hljs-comment">;</span></code></pre>
 <h2 id="list">list</h2>
 <p>获取某个元素的文件列表</p>
 <h3 id="参数-1">参数</h3>
@@ -93,12 +93,12 @@
 <li>读取 momentum-abstract/color 列表</li>
 </ul>
 
-<pre><code>const files <span class="hljs-operator">=</span> mfs.list(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
+<pre class='hljs'><code class='hljs'>const files <span class="hljs-operator">=</span> mfs.list(MomentumAbstractType.color)<span class="hljs-comment">;</span></code></pre>
 <ul>
 <li>使用过滤器读取 momentum-abstract/color 列表</li>
 </ul>
 
-<pre><code><span class="hljs-built_in">let</span> files = mfs.list(MomentumAbstractType.color, {
+<pre class='hljs'><code class='hljs'><span class="hljs-built_in">let</span> files = mfs.list(MomentumAbstractType.color, {
     whitelist: [/.json$/i]
 });</code></pre>
 <h2 id="read">read</h2>
@@ -141,14 +141,14 @@
 <li>读取 momentum-abstract/color 下所有文件</li>
 </ul>
 
-<pre><code><span class="hljs-built_in">let</span> files = mfs.<span class="hljs-built_in">read</span>(MomentumAbstractType.<span class="hljs-built_in">color</span>);</code></pre>
+<pre class='hljs'><code class='hljs'><span class="hljs-built_in">let</span> files = mfs.<span class="hljs-built_in">read</span>(MomentumAbstractType.<span class="hljs-built_in">color</span>);</code></pre>
 <h1 id="mcommon">mcommon</h1>
-<p><code><span class="hljs-attribute">mcommon</span></code> 提供一些公共方法</p>
+<p><code class='hljs'><span class="hljs-attribute">mcommon</span></code> 提供一些公共方法</p>
 
-<pre><code><span class="hljs-keyword">import</span> { mcommon } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
+<pre class='hljs'><code class='hljs'><span class="hljs-keyword">import</span> { mcommon } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
 <p>或</p>
 
-<pre><code><span class="hljs-keyword">const</span> { mcommon } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
+<pre class='hljs'><code class='hljs'><span class="hljs-keyword">const</span> { mcommon } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="getregfromnames">getRegFromNames</h2>
 <p>Create a regular expression using an array of filenames.</p>
 <h3 id="参数-3">参数</h3>
@@ -182,12 +182,12 @@
 <h2 id="getregfromnamessafe">getRegFromNamesSafe</h2>
 <p>getRegFromNamesSafe 和 getRegFromNames的参数以及返回类型相同。由于RegExp有长度限制, 在getRegFromNamesSafe我们会做长度检测。</p>
 <h1 id="mconvert">mconvert</h1>
-<p><code><span class="hljs-attribute">mconvert</span></code> 用于重命名元素的文件名和token名</p>
+<p><code class='hljs'><span class="hljs-attribute">mconvert</span></code> 用于重命名元素的文件名和token名</p>
 
-<pre><code><span class="hljs-keyword">import</span> { mconvert } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
+<pre class='hljs'><code class='hljs'><span class="hljs-keyword">import</span> { mconvert } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
 <p>或</p>
 
-<pre><code><span class="hljs-keyword">const</span> { mconvert } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
+<pre class='hljs'><code class='hljs'><span class="hljs-keyword">const</span> { mconvert } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="renamefile">renameFile</h2>
 <p>重命名文件</p>
 <h3 id="参数-4">参数</h3>
@@ -300,10 +300,10 @@
 </tbody></table>
 <h1 id="types">Types</h1>
 
-<pre><code><span class="hljs-keyword">import</span> { MomentumAbstractType } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
+<pre class='hljs'><code class='hljs'><span class="hljs-keyword">import</span> { MomentumAbstractType } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>;</code></pre>
 <p>或</p>
 
-<pre><code><span class="hljs-keyword">const</span> { <span class="hljs-title class_">MomentumAbstractType</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
+<pre class='hljs'><code class='hljs'><span class="hljs-keyword">const</span> { <span class="hljs-title class_">MomentumAbstractType</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;momentum-constructor-common&#x27;</span>);</code></pre>
 <h2 id="枚举">枚举</h2>
 <h3 id="momentumabstracttype">MomentumAbstractType</h3>
 <table>
