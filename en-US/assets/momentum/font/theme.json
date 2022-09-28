@@ -352,13 +352,13 @@
 		},
 		"headline-middle_medium": {
 			"fontSize": 100,
-			"lineHeight": 124.00000095367432,
+			"lineHeight": 124,
 			"weight": "medium",
 			"decoration": "none"
 		},
 		"headline-middle_bold": {
 			"fontSize": 100,
-			"lineHeight": 124.00000095367432,
+			"lineHeight": 124,
 			"weight": "bold",
 			"decoration": "none"
 		}
